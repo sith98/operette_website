@@ -1,0 +1,64 @@
+:root {
+    --spacing: 0.60rem;
+}
+
+body>main {
+    padding-top: calc(var(--block-spacing-vertical) + 3.5rem);
+}
+
+nav {
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background: var(--card-background-color);
+}
+
+.focus {
+    --background-color: var(--primary-focus);
+    --color: var(--primary-hover);
+}
+
+
+article.small-concert {
+    padding: var(--block-spacing-horizontal) var(--block-spacing-horizontal);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    margin: var(--block-spacing-horizontal) 0 var(--block-spacing-vertical) 0;
+}
+
+article.small-concert:hover {
+    background-color: var(--dropdown-hover-background-color);
+}
+
+article.small-concert h1,
+article.small-concert h2,
+article.small-concert h3,
+article.small-concert h4,
+article.small-concert h5,
+article.small-concert h6 {
+    margin-bottom: 0;
+}
+
+article.concert strong {
+    margin-right: 0.5rem;
+}
+
+article.concert .right {
+    margin-top: calc(var(--block-spacing-vertical) / 2);
+    text-align: left;
+}
+
+.center {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+/* nav {
+    position: fixed;
+} */
