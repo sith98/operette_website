@@ -43,8 +43,9 @@ nav a[aria-current="page"] {
     text-decoration: underline;
 }
 
-nav #home {
-    color: var(--primary-hover);
+nav #home svg {
+    height: 2rem;
+    width: 2rem;
 }
 
 @media (max-width: 575px) {
@@ -87,6 +88,12 @@ header h1 {
     left: var(--spacing);
     bottom: var(--spacing);
     text-shadow: 0 0 0.5rem black;
+}
+
+header h1 svg {
+    height: 1.5em;
+    width: 1.5em;
+    margin-top: -0.5em;
 }
 
 .person {
