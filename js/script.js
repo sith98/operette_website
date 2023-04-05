@@ -132,7 +132,7 @@ window.addEventListener("DOMContentLoaded", () => {
             gallery.appendChild(a);
         });
 
-        new SimpleLightbox(".gallery a");
+        new SimpleLightbox(".gallery a", { widthRatio: 0.5, heightRatio: 0.5 });
     });
 
     const getUrlHash = (url) => {
