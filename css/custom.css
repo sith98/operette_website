@@ -92,7 +92,7 @@ header h1 {
         "p";
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
     .person {
         grid-template-columns: 1fr 15rem;
         grid-template-rows: auto;
