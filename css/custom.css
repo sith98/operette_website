@@ -78,6 +78,10 @@ article.small-concert h6 {
     margin-bottom: 0;
 }
 
+article h3.single {
+    margin-bottom: calc(var(--spacing) / 2);
+}
+
 article.concert strong {
     margin-right: 0.5rem;
 }

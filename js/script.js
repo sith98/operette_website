@@ -43,11 +43,15 @@ window.addEventListener("DOMContentLoaded", () => {
         const time = concert.date.toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" });
         const card = document.createElement("article");
         card.classList.add("concert");
-        card.innerHTML = `
+
+        const title = concert.subtitle === undefined ? `<h3 class="single">${concert.title}</h3>` : `
             <hgroup>
-                <h3>${concert.title}</h5>
+                <h3>${concert.title}</h3>
                 <h4>${concert.subtitle}</h4>
             </hgroup>
+        `
+        card.innerHTML = `
+            ${title}
             <div class="grid">
                 <div>
                     <div>
@@ -70,17 +74,21 @@ window.addEventListener("DOMContentLoaded", () => {
         smallConcertsDiv.innerHTML = "";
         concertsDiv.innerHTML = "";
         const now = new Date();
-        concerts
+        const filteredConcerts = concerts
             .map(concert => ({ ...concert, date: new Date(concert.date) }))
-            .filter(concert => concert.date >= now)
-            .forEach((concert, i) => {
-                const card = makeCard(concert);
-                concertsDiv.appendChild(card);
-                if (i < 3) {
-                    const smallCard = makeSmallCard(concert, card);
-                    smallConcertsDiv.appendChild(smallCard);
-                }
-            });
+            .filter(concert => concert.date >= now);
+        filteredConcerts.sort((a, b) => a.date - b.date);
+        filteredConcerts.forEach((concert, i) => {
+            const card = makeCard(concert);
+            concertsDiv.appendChild(card);
+            if (i < 3) {
+                const smallCard = makeSmallCard(concert, card);
+                smallConcertsDiv.appendChild(smallCard);
+            }
+        });
+        if (filteredConcerts.length === 0) {
+            smallConcertsDiv.innerHTML = "<p><em>Keine aktuellen Konzerte geplant.</em></p>";
+        }
     });
 
     links.forEach(a => {
