@@ -29,7 +29,7 @@ nav {
     background: var(--card-background-color);
     --primary: var(--primary-light);
     --primary-hover: var(--primary-hover-light);
-    /* box-shadow: var(--card-box-shadow); */
+    box-shadow: var(--card-box-shadow);
 }
 
 nav a[aria-current="page"] {
