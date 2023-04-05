@@ -7,6 +7,7 @@
     --primary-hover: rgb(194, 176, 133);
     --primary-focus: rgb(178, 160, 119, 0.2);
     --muted-color: hsl(205deg, 10%, 50%);
+    --border-radius: 0.35rem;
 }
 
 body>main {
@@ -51,6 +52,8 @@ header {
 header img {
     width: 100%;
     height: auto;
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
 }
 
 header h1 {
@@ -98,6 +101,7 @@ header h1 {
 .person img {
     grid-area: img;
     margin-bottom: calc(var(--spacing) * 2);
+    border-radius: var(--border-radius);
 }
 
 

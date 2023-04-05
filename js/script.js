@@ -102,6 +102,13 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const hash = getUrlHash(window.location.href);
 
+    document.querySelectorAll("nav a").forEach(a => {
+        a.addEventListener("click", evt => {
+            a.focus();
+            a.blur();
+        });
+    });
+
     links.forEach(a => {
         if (getUrlHash(a.href) === hash) {
             // add attribute aria-current="page" to the link
@@ -119,9 +126,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
             links.forEach(a => a.removeAttribute("aria-current"));
             a.setAttribute("aria-current", "page");
-
-            a.focus();
-            a.blur();
         });
     });
     document.querySelector("#home").addEventListener("click", () => {
