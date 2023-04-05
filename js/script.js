@@ -1,24 +1,3 @@
-const concerts = [
-    {
-        title: "Onkel und Tante, ja das sind Verwandte",
-        subtitle: "Die Highlights der Operette",
-        date: "3. Juni 2023",
-        time: "19:30",
-        town: "Kallmünz",
-        location: "Pfarrsaal",
-        link: "https://veranstaltungen.idowa.de/neutraubling/junges-podium-highlights-der-operette-e11f4abf23090ecc400f26de5f33f08dd.html",
-        map: "https://www.google.com/maps/place/Pfarramt/@49.1622703,11.9515139,17z/data=!3m1!4b1!4m6!3m5!1s0x479f914f17ed0809:0x9471e3fa9794b251!8m2!3d49.1622668!4d11.9537026!16s%2Fg%2F1tf56wkw"
-    },
-    {
-        title: "Neues Operettenprogramm 2023",
-        subtitle: "Die Highlights der Operette",
-        date: "7. Januar 2024",
-        time: "17:00",
-        town: "Frontenhausen",
-        location: "Postsaal",
-        map: "https://www.google.com/maps/place/Kom(m)Postler+Frontenhausen/@48.5442863,12.5348744,17z/data=!3m1!4b1!4m6!3m5!1s0x47759a5b69217057:0xc524b8f953e72277!8m2!3d48.5442828!4d12.5370631!16s%2Fg%2F11g6b2f2m9",
-    },
-];
 
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -38,12 +17,13 @@ window.addEventListener("DOMContentLoaded", () => {
     };
 
     const makeSmallCard = (concert, card) => {
+        const dateString = concert.date.toLocaleDateString("de-DE", { weekday: "long", year: "numeric", month: "long", day: "numeric" });
         const smallCard = document.createElement("article");
         smallCard.classList.add("small-concert");
         smallCard.innerHTML = `
-            <h5>${concert.town}</h5>
+            <h5>${concert.locationShort}</h5>
             <h4>${concert.title}</h4>
-            <h6>${concert.date}</h6>
+            <h6>${dateString}</h6>
         `;
         smallCard.addEventListener("click", () => {
             scrollToElement(card, true);
@@ -55,9 +35,12 @@ window.addEventListener("DOMContentLoaded", () => {
         const linkHtml = concert.link === undefined && concert.map === undefined ? "" : `
             <div class="right">
                 ${concert.link === undefined ? "" : `<a class="primary" role="button" href="${concert.link}" target="_blank">Weitere Infos</a>`}
-                ${concert.map === undefined ? "" : `<a class="secondary" role="button" href="${concert.map}" target="_blank">Karte</a>`}
+                ${concert.map === undefined ? "" : `<a class="secondary" role="button" href="${concert.map}" target="_blank">Ort auf Karte anzeigen</a>`}
             </div>
         `
+        const weekday = concert.date.toLocaleDateString("de-DE", { weekday: "long" });
+        const date = concert.date.toLocaleDateString("de-DE", { year: "numeric", month: "long", day: "numeric" });
+        const time = concert.date.toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" });
         const card = document.createElement("article");
         card.classList.add("concert");
         card.innerHTML = `
@@ -67,24 +50,37 @@ window.addEventListener("DOMContentLoaded", () => {
             </hgroup>
             <div class="grid">
                 <div>
-                    <strong>Wo?</strong>
-                    ${concert.location}, ${concert.town}
+                    <div>
+                        <strong>Wo?</strong>
+                        ${concert.location}
+                    </div>
+                    <div>
+                        <strong>Wann?</strong>
+                        Am ${weekday}, den ${date} um ${time} Uhr
+                    </div>
+                    ${concert.info === undefined ? "" : `<div><em>${concert.info}</em></div>`}
                 </div>
-                <div>
-                    <strong>Wann?</strong>
-                    Am ${concert.date} um ${concert.time}
-                </div>
+                ${linkHtml}
             </div>
-            ${linkHtml}
         `;
         return card;
     };
 
-    concerts.forEach(concert => {
-        const card = makeCard(concert);
-        const smallCard = makeSmallCard(concert, card);
-        smallConcertsDiv.appendChild(smallCard);
-        concertsDiv.appendChild(card);
+    fetch("concerts.json").then(res => res.json()).then(concerts => {
+        smallConcertsDiv.innerHTML = "";
+        concertsDiv.innerHTML = "";
+        const now = new Date();
+        concerts
+            .map(concert => ({ ...concert, date: new Date(concert.date) }))
+            .filter(concert => concert.date >= now)
+            .forEach((concert, i) => {
+                const card = makeCard(concert);
+                concertsDiv.appendChild(card);
+                if (i < 3) {
+                    const smallCard = makeSmallCard(concert, card);
+                    smallConcertsDiv.appendChild(smallCard);
+                }
+            });
     });
 
     links.forEach(a => {

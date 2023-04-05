@@ -20,6 +20,39 @@ nav {
     --color: var(--primary-hover);
 }
 
+.person {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "h3"
+        "img"
+        "p";
+}
+
+@media (min-width: 992px) {
+    .person {
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "h3 img"
+            "p img";
+    }
+}
+
+.person h3 {
+    grid-area: h3;
+}
+
+.person p {
+    grid-area: p;
+}
+
+.person img {
+    grid-area: img;
+    margin-bottom: calc(var(--spacing) * 2);
+}
+
 
 article.small-concert {
     padding: var(--block-spacing-horizontal) var(--block-spacing-horizontal);
@@ -49,9 +82,13 @@ article.concert strong {
     margin-right: 0.5rem;
 }
 
+article.concert .grid {
+    align-items: end;
+    gap: var(--spacing);
+}
+
 article.concert .right {
-    margin-top: calc(var(--block-spacing-vertical) / 2);
-    text-align: left;
+    text-align: right;
 }
 
 .center {
