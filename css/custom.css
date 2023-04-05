@@ -181,7 +181,7 @@ article.concert .right {
 }
 
 .gallery img {
-    height: 7rem;
+    max-height: 7rem;
     border: 2px solid white;
     transition: 0.2s;
 }
