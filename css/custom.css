@@ -6,7 +6,7 @@
     --primary: rgb(145, 131, 98);
     --primary-hover: rgb(194, 176, 133);
     --primary-focus: rgb(178, 160, 119, 0.2);
-    --muted-color: hsl(205deg, 10%, 50%);
+    --muted-color: hsl(201, 7%, 63%);
     --border-radius: 0.35rem;
 }
 
@@ -85,7 +85,8 @@ header h1 {
         gap: 0;
         grid-template-areas:
             "h3 img"
-            "p img";
+            "p img"
+            ". img";
     }
 }
 
