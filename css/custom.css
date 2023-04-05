@@ -21,7 +21,7 @@ main>h2 {
 }
 
 nav {
-    /* z-index: 99; */
+    z-index: 99;
     position: fixed;
     top: 0;
     right: 0;
@@ -40,6 +40,12 @@ nav a[aria-current="page"] {
 
 nav #home {
     color: var(--primary-hover);
+}
+
+@media (max-width: 575px) {
+    nav #home {
+        display: none;
+    }
 }
 
 

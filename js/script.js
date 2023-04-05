@@ -6,6 +6,15 @@ window.addEventListener("DOMContentLoaded", () => {
     const smallConcertsDiv = document.querySelector(".small-concerts");
     const concertsDiv = document.querySelector(".concerts");
 
+    const adjustMainPadding = () => {
+        console.log("adjusting main padding")
+        const main = document.querySelector("main");
+        const navHeight = nav.offsetHeight;
+        main.style.paddingTop = `${navHeight}px`;
+    }
+    adjustMainPadding();
+    window.addEventListener("resize", adjustMainPadding);
+
     const scrollToElement = (element, withMargin = false) => {
         const offset = nav.offsetHeight;
         const targetOffset = element.getBoundingClientRect().top + window.pageYOffset - offset;
