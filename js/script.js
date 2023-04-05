@@ -84,6 +84,14 @@ window.addEventListener("DOMContentLoaded", () => {
         return card;
     };
 
+    const makeGalleryLink = (url) => {
+        const imageName = url.split("/").pop().split(".").shift();
+        const a = document.createElement("a");
+        a.href = url;
+        a.innerHTML = `<img src="${url}" alt="${imageName}">`;
+        return a;
+    }
+
     fetch("concerts.json").then(res => res.json()).then(concerts => {
         smallConcertsDiv.innerHTML = "";
         concertsDiv.innerHTML = "";
@@ -103,6 +111,18 @@ window.addEventListener("DOMContentLoaded", () => {
         if (filteredConcerts.length === 0) {
             smallConcertsDiv.innerHTML = "<p><em>Keine aktuellen Konzerte geplant.</em></p>";
         }
+    });
+
+    fetch("gallery.txt").then(res => res.text()).then(text => {
+        const gallery = document.querySelector(".gallery");
+        const urls = text.split("\n").filter(url => url !== "");
+        urls.forEach(url => {
+            const a = makeGalleryLink(url);
+            gallery.appendChild(a);
+        });
+        new LuminousGallery(document.querySelectorAll(".gallery a"), {
+            showCloseButton: true,
+        });
     });
 
     const getUrlHash = (url) => {
@@ -151,7 +171,4 @@ window.addEventListener("DOMContentLoaded", () => {
         links.forEach(a => a.removeAttribute("aria-current"));
     });
 
-    new LuminousGallery(document.querySelectorAll(".gallery a"), {
-        showCloseButton: true,
-    });
 });

@@ -1,0 +1,3 @@
+img/test.jpeg
+img/header.jpg
+img/header_cropped.png
