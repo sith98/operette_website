@@ -87,8 +87,19 @@ window.addEventListener("DOMContentLoaded", () => {
     const makeGalleryLink = (fileName) => {
         const imageName = fileName.split(".").shift();
         const a = document.createElement("a");
-        a.href = `img/gallery/${fileName}`;
-        a.innerHTML = `<img src="img/gallery_thumbnails/${fileName}" alt="${imageName}">`;
+        const src = `img/gallery/${fileName}`;
+        a.href = src;
+        const img = document.createElement("img");
+        const thumbnailSrc = `img/gallery_thumbnails/${fileName}`;
+        img.src = thumbnailSrc;
+        img.alt = imageName;
+        img.thumbnailFailed = false;
+        img.onerror = () => {
+            if (img.thumbnailFailed) return;
+            img.src = src;
+            img.thumbnailFailed = true;
+        };
+        a.appendChild(img);
         return a;
     }
 
