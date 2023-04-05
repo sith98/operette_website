@@ -171,10 +171,23 @@ article.concert .right {
     margin-bottom: 0;
 }
 
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gallery a {
+    margin: calc(var(--spacing) * 0.3);
+}
 
 .gallery img {
     height: 7rem;
     border: 2px solid white;
+    transition: 0.2s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
 }
 
 .lum-close-button {
