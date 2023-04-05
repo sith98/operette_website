@@ -83,11 +83,11 @@ window.addEventListener("DOMContentLoaded", () => {
         return card;
     };
 
-    const makeGalleryLink = (url) => {
-        const imageName = url.split("/").pop().split(".").shift();
+    const makeGalleryLink = (fileName) => {
+        const imageName = fileName.split(".").shift();
         const a = document.createElement("a");
-        a.href = url;
-        a.innerHTML = `<img src="${url}" alt="${imageName}">`;
+        a.href = `img/gallery/${fileName}`;
+        a.innerHTML = `<img src="img/gallery_thumbnails/${fileName}" alt="${imageName}">`;
         return a;
     }
 
