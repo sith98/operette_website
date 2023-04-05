@@ -91,13 +91,33 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    const getUrlHash = (url) => {
+        const hash = new URL(url).hash;
+        if (hash === "") {
+            return null;
+        }
+        return hash;
+    }
+
+    const hash = getUrlHash(window.location.href);
+
     links.forEach(a => {
+        if (getUrlHash(a.href) === hash) {
+            // add attribute aria-current="page" to the link
+            a.setAttribute("aria-current", "page");
+        }
         a.addEventListener("click", evt => {
             evt.preventDefault();
             const href = a.getAttribute("href");
             const target = document.querySelector(href);
             scrollToElement(target);
             history.pushState(null, null, href);
+
+            links.forEach(a => a.removeAttribute("aria-current"));
+            a.setAttribute("aria-current", "page");
+
+            a.focus();
+            a.blur();
         });
     });
     document.querySelector("#home").addEventListener("click", () => {

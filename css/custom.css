@@ -3,7 +3,7 @@
 }
 
 body>main {
-    padding-top: calc(var(--block-spacing-vertical) + 3.5rem);
+    padding-top: 3.5rem;
 }
 
 nav {
@@ -13,11 +13,34 @@ nav {
     right: 0;
     left: 0;
     background: var(--card-background-color);
+    box-shadow: var(--card-box-shadow);
 }
 
-.focus {
-    --background-color: var(--primary-focus);
-    --color: var(--primary-hover);
+nav a[aria-current="page"] {
+    /* --background-color: var(--primary-focus);
+    --color: var(--primary-hover); */
+    text-decoration: underline;
+}
+
+header {
+    position: relative;
+    margin-bottom: var(--block-spacing-vertical);
+}
+
+header img {
+    width: 100%;
+    height: auto;
+}
+
+header h1 {
+    color: hsl(205deg, 20%, 94%);
+    margin: 0;
+    position: absolute;
+    /* left: 50%;
+    transform: translate(-50%, 0); */
+    left: var(--spacing);
+    bottom: var(--spacing);
+    text-shadow: 0 0 0.5rem black;
 }
 
 .person {
