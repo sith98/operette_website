@@ -14,7 +14,7 @@
 
 @font-face {
     font-family: DancingScript;
-    src: url(/fonts/DancingScript-Regular.ttf);
+    src: url(../fonts/DancingScript-Regular.ttf);
 }
 
 body>main {
