@@ -74,7 +74,7 @@ window.addEventListener("DOMContentLoaded", () => {
                     </div>
                     <div>
                         <strong>Wann?</strong>
-                        Am ${weekday}, den ${date} um ${time} Uhr
+                        <span>Am ${weekday},</span> <span>den ${date}</span> <span>um ${time} Uhr</span>
                     </div>
                     ${concert.info === undefined ? "" : `<div><em>${concert.info}</em></div>`}
                 </div>
