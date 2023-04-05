@@ -119,7 +119,7 @@ header h1 svg {
     }
 }
 
-.person h3 {
+.person h4 {
     grid-area: h3;
     margin-bottom: var(--spacing);
 }
