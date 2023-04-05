@@ -20,6 +20,7 @@ window.addEventListener("DOMContentLoaded", () => {
         const dateString = concert.date.toLocaleDateString("de-DE", { weekday: "long", year: "numeric", month: "long", day: "numeric" });
         const smallCard = document.createElement("article");
         smallCard.classList.add("small-concert");
+        smallCard.setAttribute("tabindex", "0");
         smallCard.innerHTML = `
             <h5>${concert.locationShort}</h5>
             <h4>${concert.title}</h4>
@@ -107,6 +108,9 @@ window.addEventListener("DOMContentLoaded", () => {
             a.setAttribute("aria-current", "page");
         }
         a.addEventListener("click", evt => {
+            if (a.classList.contains("icon")) {
+                return;
+            }
             evt.preventDefault();
             const href = a.getAttribute("href");
             const target = document.querySelector(href);

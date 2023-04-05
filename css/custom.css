@@ -1,9 +1,20 @@
 :root {
     --spacing: 0.60rem;
+    --background-color: #202020;
+    --card-background-color: #2c2b31;
+    --dropdown-hover-background-color: #35333d;
+    --primary: rgb(145, 131, 98);
+    --primary-hover: rgb(194, 176, 133);
+    --primary-focus: rgb(178, 160, 119, 0.2);
+    --muted-color: hsl(205deg, 10%, 50%);
 }
 
 body>main {
     padding-top: 3.5rem;
+}
+
+main>h2 {
+    text-align: center;
 }
 
 nav {
@@ -13,13 +24,23 @@ nav {
     right: 0;
     left: 0;
     background: var(--card-background-color);
-    box-shadow: var(--card-box-shadow);
+    /* box-shadow: var(--card-box-shadow); */
 }
 
 nav a[aria-current="page"] {
     /* --background-color: var(--primary-focus);
     --color: var(--primary-hover); */
     text-decoration: underline;
+}
+
+nav #home {
+    color: var(--primary-hover);
+}
+
+
+nav a svg {
+    margin-top: -0.2em;
+    color: var(--primary-hover);
 }
 
 header {
@@ -55,8 +76,10 @@ header h1 {
 
 @media (min-width: 992px) {
     .person {
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 1fr 15rem;
         grid-template-rows: auto;
+        align-items: start;
+        gap: 0;
         grid-template-areas:
             "h3 img"
             "p img";
@@ -65,6 +88,7 @@ header h1 {
 
 .person h3 {
     grid-area: h3;
+    margin-bottom: var(--spacing);
 }
 
 .person p {
@@ -89,6 +113,10 @@ article.small-concert {
 }
 
 article.small-concert:hover {
+    background-color: var(--dropdown-hover-background-color);
+}
+
+article.small-concert:focus {
     background-color: var(--dropdown-hover-background-color);
 }
 
