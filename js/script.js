@@ -84,7 +84,7 @@ window.addEventListener("DOMContentLoaded", () => {
         return card;
     };
 
-    const makeGalleryLink = (fileName) => {
+    const makeGalleryLink = (fileName, title) => {
         const imageName = fileName.split(".").shift();
         const a = document.createElement("a");
         const src = `img/gallery/${fileName}`;
@@ -94,6 +94,9 @@ window.addEventListener("DOMContentLoaded", () => {
         img.src = thumbnailSrc;
         img.alt = imageName;
         img.thumbnailFailed = false;
+        if (title !== undefined) {
+            img.title = title;
+        }
         img.onerror = () => {
             if (img.thumbnailFailed) return;
             img.src = src;
@@ -126,9 +129,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
     gallery.then(text => {
         const gallery = document.querySelector(".gallery");
-        const urls = text.split("\n").filter(url => url !== "").map(url => url.trim());
-        urls.forEach(url => {
-            const a = makeGalleryLink(url);
+        const images = text.split("\n").filter(url => url !== "").map(url =>
+            url.split(",").map(s => s.trim()).filter(s => s !== "")
+        )
+        images.forEach(([url, title]) => {
+            const a = makeGalleryLink(url, title);
             gallery.appendChild(a);
         });
 
