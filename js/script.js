@@ -1,4 +1,5 @@
-
+const concerts = fetch("concerts.json", { priority: "high" }).then(res => res.json());
+const gallery = fetch("gallery.txt", { priority: "low" }).then(res => res.text());
 
 window.addEventListener("DOMContentLoaded", () => {
     const nav = document.querySelector("nav");
@@ -91,7 +92,7 @@ window.addEventListener("DOMContentLoaded", () => {
         return a;
     }
 
-    fetch("concerts.json").then(res => res.json()).then(concerts => {
+    concerts.then(concerts => {
         smallConcertsDiv.innerHTML = "";
         concertsDiv.innerHTML = "";
         const now = new Date();
@@ -112,7 +113,7 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    fetch("gallery.txt").then(res => res.text()).then(text => {
+    gallery.then(text => {
         const gallery = document.querySelector(".gallery");
         const urls = text.split("\n").filter(url => url !== "").map(url => url.trim());
         urls.forEach(url => {

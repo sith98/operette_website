@@ -48,11 +48,11 @@ nav #home svg {
     width: 2rem;
 }
 
-@media (max-width: 575px) {
+/* @media (max-width: 575px) {
     nav #home {
         display: none;
     }
-}
+} */
 
 
 nav a svg {
@@ -78,7 +78,7 @@ header img {
 }
 
 header h1 {
-    font-family: DancingScript;
+    font-family: DancingScript, serif;
     font-size: 3rem;
     color: hsl(205deg, 20%, 94%);
     margin: 0;
@@ -88,6 +88,12 @@ header h1 {
     left: var(--spacing);
     bottom: var(--spacing);
     text-shadow: 0 0 0.5rem black;
+}
+
+@media (max-width: 575px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
 }
 
 header h1 svg {
@@ -101,7 +107,7 @@ header h1 svg {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     grid-template-areas:
-        "h3"
+        "h4"
         "img"
         "p";
 }
@@ -113,14 +119,14 @@ header h1 svg {
         align-items: start;
         gap: 0;
         grid-template-areas:
-            "h3 img"
+            "h4 img"
             "p img"
             ". img";
     }
 }
 
 .person h4 {
-    grid-area: h3;
+    grid-area: h4;
     margin-bottom: var(--spacing);
 }
 
@@ -213,8 +219,6 @@ article.concert span {
     background: black !important;
 }
 
-.sl-close,
-.sl-navigation *,
-.sl-counter {
+.simple-lightbox * {
     color: white !important;
 }

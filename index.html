@@ -7,9 +7,9 @@
     <title>Ensemble InSzene</title>
     <link rel="stylesheet" href="css/pico.min.css">
     <link rel="stylesheet" href="css/custom.css">
-    <link rel="stylesheet" href="css/simple-lightbox.min.css">
-    <script src="js/simple-lightbox.min.js"></script>
     <script src="js/script.js"></script>
+    <link rel="preload" href="concerts.json" as="fetch">
+    <link rel="preload" href="fonts/DancingScript-Regular.ttf" as="font">
 </head>
 
 <body>
@@ -164,7 +164,7 @@
                 Planung, Organisation sowie künstlerischen Durchführung diverser musikalischer
                 Projekte quer durch die Oberpfalz.
             </p>
-            <img src="img/annemarie.jpg" alt="Annemarie Koller" srcset="">
+            <img src="img/annemarie.jpg" alt="Annemarie Koller" srcset="" fetchpriority="low">
         </div>
         <div class="person">
             <h4>Eva Müller, <em>Mezzosopran</em></h4>
@@ -175,7 +175,7 @@
                 Regensburg und erhielt dort Gesangsunterricht bei Julia Renz-Köck. Hierbei war sie bei
                 zahlreichen Musiktheaterproduktionen tätig.
             </p>
-            <img src="img/eva.jpg" alt="Eva Müller" srcset="">
+            <img src="img/eva.jpg" alt="Eva Müller" srcset="" fetchpriority="low">
         </div>
 
         <div class="person">
@@ -189,7 +189,7 @@
                 Klavierbegleiter) wie sängerische Konzerttätigkeit ist er der Musik auch während seines
                 Medizinstudiums treu geblieben.
             </p>
-            <img src="img/maximilian.jpg" alt="Maximilian Niebler" srcset="">
+            <img src="img/maximilian.jpg" alt="Maximilian Niebler" srcset="" fetchpriority="low">
         </div>
 
         <div class="person">
@@ -203,7 +203,7 @@
                 Gabriele Kaiser, Veronika Bertsch und Sven Fürst. Neben solistischen Auftritten singt er
                 auch in verschiedenen Formationen und ist als Klavierbegleiter tätig.
             </p>
-            <img src="img/andreas.jpg" alt="Andreas Rottmeier" srcset="">
+            <img src="img/andreas.jpg" alt="Andreas Rottmeier" srcset="" fetchpriority="low">
         </div>
 
         <div class="person">
@@ -216,13 +216,15 @@
                 Organist in der katholischen Gemeinde St. Jakob in Langquaid. Er ist in verschiedenen
                 Konstellationen als Sänger, Pianist, Organist und Arrangeur tätig.
             </p>
-            <img src="img/simon.jpg" alt="Simon Thelen" srcset="">
+            <img src="img/simon.jpg" alt="Simon Thelen" srcset="" fetchpriority="low">
         </div>
 
 
         <h2 id="concerts">Konzerte</h2>
         <div class="concerts"></div>
 
+        <link rel="stylesheet" href="css/simple-lightbox.min.css">
+        <script src="js/simple-lightbox.min.js"></script>
         <h2 id="gallery">Galerie</h2>
         <section class="gallery">
         </section>
