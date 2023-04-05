@@ -28,6 +28,10 @@ window.addEventListener("DOMContentLoaded", () => {
         `;
         smallCard.addEventListener("click", () => {
             scrollToElement(card, true);
+            links.forEach(a => a.removeAttribute("aria-current"));
+            const link = document.querySelector('a[href*="#concerts"]')
+            link.setAttribute("aria-current", "page");
+            history.pushState(null, null, link.getAttribute("href"));
         });
         return smallCard;
     };
@@ -134,26 +138,11 @@ window.addEventListener("DOMContentLoaded", () => {
             top: 0,
             behavior: "smooth",
         });
-    })
-    // window.addEventListener("scroll", evt => {
-    //     const scrollY = window.scrollY;
-    //     const navHeight = nav.offsetHeight;
-    //     if (scrollY > navHeight) {
-    //         nav.classList.add("fixed");
-    //     } else {
-    //         nav.classList.remove("fixed");
-    //     }
-    //     // update active link
-    //     links.forEach(a => {
-    //         const href = a.getAttribute("href");
-    //         const target = document.querySelector(href);
-    //         const offset = nav.offsetHeight;
-    //         const targetOffset = target.offsetTop - offset;
-    //         if (scrollY >= targetOffset) {
-    //             links.forEach(a => a.classList.remove("focus"));
-    //             a.classList.add("focus");
-    //             return;
-    //         }
-    //     });
-    // })
+        history.pushState(null, null, null);
+        links.forEach(a => a.removeAttribute("aria-current"));
+    });
+
+    new LuminousGallery(document.querySelectorAll(".gallery a"), {
+        showCloseButton: true,
+    });
 });
