@@ -114,14 +114,13 @@ window.addEventListener("DOMContentLoaded", () => {
 
     fetch("gallery.txt").then(res => res.text()).then(text => {
         const gallery = document.querySelector(".gallery");
-        const urls = text.split("\n").filter(url => url !== "");
+        const urls = text.split("\n").filter(url => url !== "").map(url => url.trim());
         urls.forEach(url => {
             const a = makeGalleryLink(url);
             gallery.appendChild(a);
         });
-        new LuminousGallery(document.querySelectorAll(".gallery a"), {
-            showCloseButton: true,
-        });
+
+        new SimpleLightbox(".gallery a");
     });
 
     const getUrlHash = (url) => {

@@ -201,22 +201,13 @@ article.concert span {
     transform: scale(1.05);
 }
 
-.lum-lightbox {
-    z-index: 100;
+
+.sl-overlay {
+    background: black !important;
 }
 
-.lum-close-button {
-    cursor: pointer;
-    opacity: 0.7 !important;
-}
-
-.lum-close-button:hover {
-    opacity: 1 !important;
-}
-
-@media (max-width: 460px) {
-    .lum-lightbox-inner img {
-        max-height: 100% !important;
-        max-width: 100% !important;
-    }
+.sl-close,
+.sl-navigation *,
+.sl-counter {
+    color: white !important;
 }
