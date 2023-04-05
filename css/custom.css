@@ -190,6 +190,10 @@ article.concert .right {
     transform: scale(1.05);
 }
 
+.lum-lightbox {
+    z-index: 100;
+}
+
 .lum-close-button {
     cursor: pointer;
     opacity: 0.7 !important;
