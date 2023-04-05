@@ -7,7 +7,6 @@ window.addEventListener("DOMContentLoaded", () => {
     const concertsDiv = document.querySelector(".concerts");
 
     const adjustMainPadding = () => {
-        console.log("adjusting main padding")
         const main = document.querySelector("main");
         const navHeight = nav.offsetHeight;
         main.style.paddingTop = `${navHeight}px`;
