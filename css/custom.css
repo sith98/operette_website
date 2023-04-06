@@ -185,6 +185,13 @@ iframe {
     max-width: 100%;
 }
 
+.small-concerts-header {
+    text-align: center;
+    margin-bottom: var(--spacing);
+    color: var(--primary-light)
+}
+
+
 .small-concerts {
     display: flex;
     gap: var(--block-spacing-horizontal);
@@ -253,11 +260,6 @@ article.concert .right {
 
 article.concert span {
     display: inline-block;
-}
-
-.center {
-    text-align: center;
-    margin-bottom: var(--spacing);
 }
 
 .gallery {
