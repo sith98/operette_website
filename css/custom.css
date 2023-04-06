@@ -31,7 +31,7 @@ main>h5 {
     margin-bottom: var(--spacing);
 }
 
-nav {
+nav.container-fluid {
     z-index: 99;
     position: fixed;
     top: 0;
@@ -41,6 +41,8 @@ nav {
     --primary: var(--primary-light);
     --primary-hover: var(--primary-hover-light);
     box-shadow: var(--card-box-shadow);
+    padding-left: var(--nav-element-spacing-vertical);
+    padding-right: var(--nav-element-spacing-vertical);
 }
 
 @media (max-width: 575px) {

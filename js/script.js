@@ -157,7 +157,7 @@ window.addEventListener("DOMContentLoaded", () => {
             }
         });
         if (filteredConcerts.length === 0) {
-            smallConcertsDiv.innerHTML = "<p><em>Keine aktuellen Konzerte geplant.</em></p>";
+            smallConcertsDiv.innerHTML = concertsDiv.innerHTML = "<p><em>Aktuell stehen noch keine zukünftigen Konzerttermine fest.</em></p>";
         }
     });
 
