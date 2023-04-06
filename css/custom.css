@@ -125,6 +125,12 @@ header h1 svg {
     }
 }
 
+@media (max-width: 767px) {
+    .person h4 {
+        text-align: center;
+    }
+}
+
 .person h4 {
     grid-area: h4;
     margin-bottom: var(--spacing);
@@ -138,6 +144,7 @@ header h1 svg {
     grid-area: img;
     margin-bottom: calc(var(--spacing) * 2);
     border-radius: var(--border-radius);
+    justify-self: center;
 }
 
 
