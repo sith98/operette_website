@@ -1,4 +1,6 @@
-const concerts = fetch("concerts.json", { priority: "high" }).then(res => res.json());
+const concerts = fetch("/concerts.json", {
+    credentials: "same-origin",
+}).then(res => res.json());
 const gallery = fetch("gallery.txt", { priority: "low" }).then(res => res.text());
 
 window.addEventListener("DOMContentLoaded", () => {
