@@ -1,4 +1,4 @@
-const concerts = fetch("/concerts.json", {
+const concerts = fetch("concerts.json", {
     credentials: "same-origin",
 }).then(res => res.json());
 const gallery = fetch("gallery.txt", { priority: "low" }).then(res => res.text());
