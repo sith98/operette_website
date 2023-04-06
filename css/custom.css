@@ -15,6 +15,7 @@
 @font-face {
     font-family: DancingScript;
     src: url(../fonts/DancingScript-Regular.ttf);
+    font-display: swap;
 }
 
 body>main {
@@ -190,7 +191,10 @@ article.concert .grid {
 }
 
 article.concert .right {
-    text-align: right;
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(var(--spacing) / 2);
+    justify-content: end;
 }
 
 article.concert span {
