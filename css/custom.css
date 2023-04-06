@@ -77,6 +77,43 @@ nav a svg:hover {
     color: var(--primary-hover);
 }
 
+/* Header */
+
+header {
+    position: relative;
+    margin-bottom: var(--block-spacing-vertical);
+}
+
+header img {
+    width: 100%;
+    height: auto;
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+}
+
+header h1 {
+    font-family: DancingScript, serif;
+    font-size: 3rem;
+    color: hsl(205deg, 20%, 94%);
+    margin: 0;
+    position: absolute;
+    left: var(--spacing);
+    bottom: var(--spacing);
+    text-shadow: 0 0 0.5rem black;
+}
+
+@media (max-width: 575px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+}
+
+header h1 svg {
+    height: 1.5em;
+    width: 1.5em;
+    margin-top: -0.35em;
+}
+
 /* Small concerts */
 
 .small-concerts-header {
@@ -126,43 +163,6 @@ article.small-concert h4,
 article.small-concert h5,
 article.small-concert h6 {
     margin-bottom: 0;
-}
-
-/* Header */
-
-header {
-    position: relative;
-    margin-bottom: var(--block-spacing-vertical);
-}
-
-header img {
-    width: 100%;
-    height: auto;
-    border-bottom-left-radius: var(--border-radius);
-    border-bottom-right-radius: var(--border-radius);
-}
-
-header h1 {
-    font-family: DancingScript, serif;
-    font-size: 3rem;
-    color: hsl(205deg, 20%, 94%);
-    margin: 0;
-    position: absolute;
-    left: var(--spacing);
-    bottom: var(--spacing);
-    text-shadow: 0 0 0.5rem black;
-}
-
-@media (max-width: 575px) {
-    header h1 {
-        font-size: 2.5rem;
-    }
-}
-
-header h1 svg {
-    height: 1.5em;
-    width: 1.5em;
-    margin-top: -0.35em;
 }
 
 /* About us */
@@ -235,7 +235,7 @@ iframe {
     max-width: 100%;
 }
 
-/* concerts */
+/* Concerts */
 
 article h3.single {
     margin-bottom: calc(var(--spacing) / 2);
