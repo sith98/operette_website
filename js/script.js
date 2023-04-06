@@ -9,6 +9,10 @@ window.addEventListener("DOMContentLoaded", () => {
     const smallConcertsDiv = document.querySelector(".small-concerts");
     const concertsDiv = document.querySelector(".concerts");
 
+    //
+    // Navbar
+    //
+
     const adjustMainPadding = () => {
         const main = document.querySelector("main");
         const navHeight = nav.offsetHeight;
@@ -26,6 +30,56 @@ window.addEventListener("DOMContentLoaded", () => {
             behavior: "smooth",
         });
     };
+
+    const getUrlHash = (url) => {
+        const hash = new URL(url).hash;
+        if (hash === "") {
+            return null;
+        }
+        return hash;
+    }
+
+    const hash = getUrlHash(window.location.href);
+
+    document.querySelectorAll("nav a").forEach(a => {
+        a.addEventListener("click", evt => {
+            a.focus();
+            a.blur();
+        });
+    });
+
+    links.forEach(a => {
+        if (getUrlHash(a.href) === hash) {
+            // add attribute aria-current="page" to the link
+            a.setAttribute("aria-current", "page");
+        }
+        a.addEventListener("click", evt => {
+            if (a.classList.contains("icon")) {
+                return;
+            }
+            evt.preventDefault();
+            const href = a.getAttribute("href");
+            const target = document.querySelector(href);
+            scrollToElement(target);
+            history.pushState(null, null, href);
+
+            links.forEach(a => a.removeAttribute("aria-current"));
+            a.setAttribute("aria-current", "page");
+        });
+    });
+    document.querySelector("#home").addEventListener("click", () => {
+        // scroll to the top
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+        history.pushState(null, null, null);
+        links.forEach(a => a.removeAttribute("aria-current"));
+    });
+
+    //
+    // Concerts
+    //
 
     const makeSmallCard = (concert, card) => {
         const dateString = concert.date.toLocaleDateString("de-DE", { weekday: "long", year: "numeric", month: "long", day: "numeric" });
@@ -86,6 +140,31 @@ window.addEventListener("DOMContentLoaded", () => {
         return card;
     };
 
+    concerts.then(concerts => {
+        smallConcertsDiv.innerHTML = "";
+        concertsDiv.innerHTML = "";
+        const now = new Date();
+        const filteredConcerts = concerts
+            .map(concert => ({ ...concert, date: new Date(concert.date) }))
+            .filter(concert => concert.date >= now);
+        filteredConcerts.sort((a, b) => a.date - b.date);
+        filteredConcerts.forEach((concert, i) => {
+            const card = makeCard(concert);
+            concertsDiv.appendChild(card);
+            if (i < 3) {
+                const smallCard = makeSmallCard(concert, card);
+                smallConcertsDiv.appendChild(smallCard);
+            }
+        });
+        if (filteredConcerts.length === 0) {
+            smallConcertsDiv.innerHTML = "<p><em>Keine aktuellen Konzerte geplant.</em></p>";
+        }
+    });
+
+    //
+    // Gallery
+    //
+
     const makeGalleryLink = (fileName, title) => {
         const imageName = fileName.split(".").shift();
         const a = document.createElement("a");
@@ -108,27 +187,6 @@ window.addEventListener("DOMContentLoaded", () => {
         return a;
     }
 
-    concerts.then(concerts => {
-        smallConcertsDiv.innerHTML = "";
-        concertsDiv.innerHTML = "";
-        const now = new Date();
-        const filteredConcerts = concerts
-            .map(concert => ({ ...concert, date: new Date(concert.date) }))
-            .filter(concert => concert.date >= now);
-        filteredConcerts.sort((a, b) => a.date - b.date);
-        filteredConcerts.forEach((concert, i) => {
-            const card = makeCard(concert);
-            concertsDiv.appendChild(card);
-            if (i < 3) {
-                const smallCard = makeSmallCard(concert, card);
-                smallConcertsDiv.appendChild(smallCard);
-            }
-        });
-        if (filteredConcerts.length === 0) {
-            smallConcertsDiv.innerHTML = "<p><em>Keine aktuellen Konzerte geplant.</em></p>";
-        }
-    });
-
     gallery.then(text => {
         const gallery = document.querySelector(".gallery");
         const images = text.split("\n").filter(url => url !== "").map(url =>
@@ -139,53 +197,8 @@ window.addEventListener("DOMContentLoaded", () => {
             gallery.appendChild(a);
         });
 
-        new SimpleLightbox(".gallery a");
+        new SimpleLightbox(".gallery a", { spinner: true, history: false });
     });
 
-    const getUrlHash = (url) => {
-        const hash = new URL(url).hash;
-        if (hash === "") {
-            return null;
-        }
-        return hash;
-    }
-
-    const hash = getUrlHash(window.location.href);
-
-    document.querySelectorAll("nav a").forEach(a => {
-        a.addEventListener("click", evt => {
-            a.focus();
-            a.blur();
-        });
-    });
-
-    links.forEach(a => {
-        if (getUrlHash(a.href) === hash) {
-            // add attribute aria-current="page" to the link
-            a.setAttribute("aria-current", "page");
-        }
-        a.addEventListener("click", evt => {
-            if (a.classList.contains("icon")) {
-                return;
-            }
-            evt.preventDefault();
-            const href = a.getAttribute("href");
-            const target = document.querySelector(href);
-            scrollToElement(target);
-            history.pushState(null, null, href);
-
-            links.forEach(a => a.removeAttribute("aria-current"));
-            a.setAttribute("aria-current", "page");
-        });
-    });
-    document.querySelector("#home").addEventListener("click", () => {
-        // scroll to the top
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-        });
-        history.pushState(null, null, null);
-        links.forEach(a => a.removeAttribute("aria-current"));
-    });
 
 });

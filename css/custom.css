@@ -274,6 +274,10 @@ article.concert span {
     background: black !important;
 }
 
+.sl-spinner {
+    border: 5px solid #aaa !important;
+}
+
 .simple-lightbox * {
     color: white !important;
 }
