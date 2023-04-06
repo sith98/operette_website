@@ -174,11 +174,26 @@ figcaption::before {
     content: "— ";
 }
 
-iframe {
+.lazyframe {
+    width: 560px;
     max-width: 100%;
 }
 
-article.small-concert {
+.small-concerts {
+    display: flex;
+    gap: var(--block-spacing-horizontal);
+    flex-direction: column;
+    margin-bottom: var(--typography-spacing-vertical);
+}
+
+@media (min-width: 768px) {
+    .small-concerts {
+        flex-direction: row;
+    }
+}
+
+.small-concerts article {
+    flex: 1;
     padding: var(--block-spacing-horizontal) var(--block-spacing-horizontal);
     text-align: center;
     display: flex;
@@ -186,7 +201,7 @@ article.small-concert {
     justify-content: center;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
-    margin: var(--block-spacing-horizontal) 0 var(--block-spacing-vertical) 0;
+    margin: 0;
 }
 
 article.small-concert:hover {
@@ -232,7 +247,7 @@ article.concert span {
 
 .center {
     text-align: center;
-    margin-bottom: 0;
+    margin-bottom: var(--spacing);
 }
 
 .gallery {
