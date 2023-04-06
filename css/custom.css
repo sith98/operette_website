@@ -284,3 +284,9 @@ article.concert span {
 .simple-lightbox * {
     color: white !important;
 }
+
+.sl-wrapper .sl-image .sl-caption {
+    background: transparent;
+    text-align: right;
+    text-shadow: 0 0 0.3rem black;
+}
