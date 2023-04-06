@@ -1,1 +1,1 @@
-magick mogrify -resize x200 -path img/gallery_thumbnails img/gallery/*
+magick mogrify -resize x200 -quality 85% -path img/gallery_thumbnails img/gallery/*
