@@ -174,7 +174,8 @@ figcaption::before {
     content: "— ";
 }
 
-.lazyframe {
+.lazyframe,
+iframe {
     width: 560px;
     max-width: 100%;
 }
