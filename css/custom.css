@@ -156,6 +156,24 @@ article.small-concert:focus {
     background-color: var(--dropdown-hover-background-color);
 }
 
+
+article.small-concert div:nth-child(1) {
+    font-size: var(--font-size);
+    color: var(--h6-color);
+    font-weight: bold;
+}
+
+article.small-concert div:nth-child(2) {
+    font-size: 1.25rem;
+    color: var(--h2-color);
+    font-weight: bold;
+}
+
+article.small-concert div:nth-child(3) {
+    font-size: var(--font-size);
+    color: var(--h4-color);
+}
+
 article.small-concert h1,
 article.small-concert h2,
 article.small-concert h3,

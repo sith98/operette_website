@@ -87,9 +87,9 @@ window.addEventListener("DOMContentLoaded", () => {
         smallCard.classList.add("small-concert");
         smallCard.setAttribute("tabindex", "0");
         smallCard.innerHTML = `
-            <h5>${concert.locationShort}</h5>
-            <h4>${concert.title}</h4>
-            <h6>${dateString}</h6>
+            <div>${concert.locationShort}</div>
+            <div>${concert.title}</div>
+            <div>${dateString}</div>
         `;
         smallCard.addEventListener("click", () => {
             scrollToElement(card, true);
