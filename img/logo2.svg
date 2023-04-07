@@ -13,11 +13,11 @@
      id="defs132" />
      <style>
     * {
-      fill: #000
+      fill: #9b8c68;
     }
     @media (prefers-color-scheme: dark) {
       *  {
-        fill: #fff;
+        fill: #d1bd8d;
       }
     }
     </style>
