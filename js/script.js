@@ -2,6 +2,7 @@ const concerts = fetch("concerts.json", {
     credentials: "same-origin",
 }).then(res => res.json());
 const gallery = fetch("gallery.txt", { priority: "low" }).then(res => res.text());
+const linkIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>`;
 
 window.addEventListener("DOMContentLoaded", () => {
     const nav = document.querySelector("nav");
@@ -104,8 +105,8 @@ window.addEventListener("DOMContentLoaded", () => {
     const makeCard = (concert) => {
         const linkHtml = concert.link === undefined && concert.map === undefined ? "" : `
             <div class="right">
-                ${concert.link === undefined ? "" : `<a class="primary" role="button" href="${concert.link}" target="_blank">Weitere Infos</a>`}
-                ${concert.map === undefined ? "" : `<a class="secondary" role="button" href="${concert.map}" target="_blank">Ort auf Karte anzeigen</a>`}
+                ${concert.link === undefined ? "" : `<a class="primary" role="button" href="${concert.link}" target="_blank">Weitere Infos ${linkIcon}</a>`}
+                ${concert.map === undefined ? "" : `<a class="secondary" role="button" href="${concert.map}" target="_blank">Auf Karte anzeigen ${linkIcon}</a>`}
             </div>
         `
         const weekday = concert.date.toLocaleDateString("de-DE", { weekday: "long" });

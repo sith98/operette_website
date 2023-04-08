@@ -231,7 +231,98 @@
                 Max Mustermann, Musterstraße 1, 12345 Musterstadt
             </small>
         </p>
+        <p>
+            <a href="#" id="privacy-link">Datenschutzerklärung</a>
+        </p>
     </footer>
+    <dialog id="privacy">
+        <article>
+            <header>
+                <strong>
+                    Datenschutzerklärung
+                </strong>
+                <a href="#" aria-label="Schließen" class="close"></a>
+            </header>
+            <main>
+                <h4>Zusammenfassung</h4>
+                <ul>
+                    <li>Wir als Seitenbetreiber erheben keinerlei Daten über die Nutzer unsere Website. Wir verwenden
+                        weder Tracking noch Cookies.</li>
+                    <li>Wir verwenden GitHub-Pages als Hosting-Anbieter. Dieser speichert wie die meisten Hoster
+                        Nutzungsdaten wie IP-Adresse, Dauer der Nutzung etc., um ein stabiles und sicheres Bereitstellen
+                        der Website sicherstellen zu können.</li>
+                    <li>Diese Website enthält Verweise auf externe Seiten (u.a. Instagram, Google Maps). Wenn Sie über
+                        diese Verweise auf eine dieser Seiten wechseln, gelten dort die Datenschutzbestimmungen der
+                        jeweiligen Plattform.</li>
+                    <li>Wenn Sie uns per Mail oder Social Media kontaktieren, gelten ebenfalls die
+                        Datenschutzbestimmungen des jeweiligen Anbieters.</li>
+                </ul>
+                <h4>Hosting</h4>
+                <p>Wir verwenden zur Bereitstellung dieser Website den Webhosting-Dienst Github-Pages. Anbieter dieses
+                    Dienstes ist:</p>
+                <p>GitHub Inc.<br> 88 Colin P. Kelly Jr. St.<br> San Francisco, CA 94107<br> USA</p>
+
+                <div>
+                    Ihr Browser übermittelt die folgenden Daten an den Hoster:
+                </div>
+                <ul>
+                    <li>IP-Adresse</li>
+                    <li>die Adresse der vorher besuchten Website (Referer Anfrage-Header)</li>
+                    <li>Datum und Uhrzeit der Anfrage (inkl. Zeitzoneninformationen)</li>
+                    <li>Inhalt der Anforderung</li>
+                    <li>HTTP-Statuscode</li>
+                    <li>übertragene Datenmenge</li>
+                    <li>Informationen zu Browser und Betriebssystem</li>
+                </ul>
+                <p>Dies ist erforderlich, um unsere Website auf stabile und sichere Weise bereitstellen zu können
+                    und entspricht unserem berechtigten Interesse nach Art. 6 Abs. 1 Bst. f DSGVO.</p>
+
+                <p>
+                    Github Inc. ist der Empfänger Ihrer personenbezogenen Daten. Wir als Seitenbetreiber haben keinerlei
+                    Zugriff auf diese Daten.
+                    Weitere Informationen zu den Datenschutzbestimmungen des Hosting-Anbieters finden <a
+                        href="https://docs.github.com/de/site-policy/privacy-policies" target="_blank">hier</a>.
+                    Informationen speziell zu den europäischen Datenschutzrechten finden Sie <a
+                        href="https://docs.github.com/de/site-policy/privacy-policies/github-privacy-statement#european-data-protection-rights-notice"
+                        target="_blank">hier</a>.
+                </p>
+                <p>GitHub hat Compliance-Maßnahmen für internationale Datenübermittlungen umgesetzt.
+                    Diese Maßnahmen basieren auf den <a
+                        href="https://eur-lex.europa.eu/eli/dec_impl/2021/914/oj?uri=CELEX%3A32021D0914&locale=de"
+                        target="_blank">EU-Standardvertragsklauseln</a> (SCCs).
+                    Sie sollen sicherstellen, dass die Verarbeiten von personenbezogenen Daten den
+                    EU-Datenschutzstandards genügt, auch wenn die Datenübertragung und -verarbeitung außerhalb der EU
+                    stattfindet.
+                    Informationen finden Sie <a href="https://github.com/enterprise-legal" target="_blank">hier</a>.
+                </p>
+                <p>
+                    Nach DSGVO ist im Allgemeinen ein Auftragsverarbeitungsvertrag mit dem Hosting-Anbieter
+                    abzuschließen.
+                    Das bayerische Landesamt für Datenschutzaufsicht sieht jedoch bei Vereinen und Kleinunternehmen eine
+                    <a href="https://www.lda.bayern.de/media/veroeffentlichungen/FAQ_Hosting_keine_Auftragsverarbeitung.pdf"
+                        target="_blank">Ausnahme</a> für statische Websites vor, die keine personenbezogenen Daten
+                    verarbeiten. Konkret heißt es:
+                    „Die Tatsache, dass auch beim
+                    Hosting von statischen Webseiten zwangsläufig IP-Adressen, d.h. personenbezogene Daten, verarbeitet
+                    werden müssen, führt nicht zur Annahme einer Auftragsverarbeitung.“
+                    Wir gehen davon aus, dass diese Ausnahme auch für GitHub-Pages und damit für unsere Website gilt.
+                </p>
+            </main>
+        </article>
+    </dialog>
+
+    <script>
+        const dialog = document.querySelector("#privacy");
+
+        document.querySelector("#privacy-link").addEventListener("click", (e) => {
+            e.preventDefault();
+            dialog.setAttribute("open", "");
+        });
+        document.querySelector("#privacy .close").addEventListener("click", (e) => {
+            e.preventDefault();
+            dialog.removeAttribute("open");
+        });
+    </script>
 </body>
 
 </html>
