@@ -190,6 +190,11 @@ article.small-concert div:nth-child(3) {
     color: var(--h4-color);
 }
 
+article.small-concert div:nth-child(3).special-date {
+    font-weight: bold;
+    color: var(--primary-hover-light);
+}
+
 article.small-concert h1,
 article.small-concert h2,
 article.small-concert h3,

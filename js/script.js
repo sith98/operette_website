@@ -83,14 +83,29 @@ window.addEventListener("DOMContentLoaded", () => {
     //
 
     const makeSmallCard = (concert, card) => {
-        const dateString = concert.date.toLocaleDateString("de-DE", { weekday: "long", year: "numeric", month: "long", day: "numeric" });
+        const today = new Date(new Date().toDateString());
+        const day = new Date(concert.date.toDateString());
+        const timeString = concert.date.toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" });
+        let dateString = concert.date.toLocaleDateString("de-DE", { weekday: "long", year: "numeric", month: "long", day: "numeric" });
+        let specialDate = false;
+        console.log(day, today, day - today)
+        if (day - today === 0) {
+            dateString = `Heute um ${timeString}`;
+            specialDate = true;
+        } else if (day - today === 3600 * 24 * 1000) {
+            dateString = `Morgen um ${timeString}`;
+            specialDate = true;
+        } else if (day - today <= 3600 * 24 * 1000 * 6) {
+            dateString = "Kommenden " + concert.date.toLocaleDateString("de-DE", { weekday: "long" });
+            specialDate = true;
+        }
         const smallCard = document.createElement("article");
         smallCard.classList.add("small-concert");
         smallCard.setAttribute("tabindex", "0");
         smallCard.innerHTML = `
             <div>${concert.locationShort}</div>
             <div>${concert.title}</div>
-            <div>${dateString}</div>
+            <div ${specialDate ? `class="special-date"` : ""}>${dateString}</div>
         `;
         smallCard.addEventListener("click", () => {
             scrollToElement(card, true);
