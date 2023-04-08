@@ -97,18 +97,30 @@ header img {
 
 header h1 {
     font-family: DancingScript, serif;
-    font-size: 3rem;
+    font-size: 4rem;
     color: hsl(205deg, 20%, 94%);
     margin: 0;
     position: absolute;
-    left: var(--spacing);
-    bottom: var(--spacing);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: calc(var(--spacing) * 5) var(--spacing) var(--spacing) var(--spacing);
     text-shadow: 0 0 0.5rem black;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    text-align: center;
+}
+
+@media (max-width: 767px) {
+    header h1 {
+        font-size: 3rem;
+    }
 }
 
 @media (max-width: 575px) {
     header h1 {
-        font-size: 2.5rem;
+        font-size: calc((100vw - 4 * var(--spacing)) * 0.1);
     }
 }
 
@@ -116,6 +128,7 @@ header h1 svg {
     height: 1.5em;
     width: 1.5em;
     margin-top: -0.35em;
+    /* filter: drop-shadow(0 0 0.5rem black); */
 }
 
 /* Small concerts */
@@ -193,8 +206,7 @@ article.small-concert h6 {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-    grid-template-areas:
-        "h4"
+    grid-template-areas: "h4"
         "img"
         "p";
 }
@@ -205,8 +217,7 @@ article.small-concert h6 {
         grid-template-rows: auto;
         align-items: start;
         gap: 0;
-        grid-template-areas:
-            "h4 img"
+        grid-template-areas: "h4 img"
             "p img"
             ". img";
     }
@@ -332,6 +343,11 @@ article.concert svg {
     background: transparent;
     text-align: right;
     text-shadow: 0 0 0.3rem black;
+}
+
+footer {
+    --primary: var(--primary-light);
+    --primary-hover: var(--primary-hover-light);
 }
 
 dialog main {
