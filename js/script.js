@@ -144,10 +144,10 @@ window.addEventListener("DOMContentLoaded", () => {
     concerts.then(concerts => {
         smallConcertsDiv.innerHTML = "";
         concertsDiv.innerHTML = "";
-        const now = new Date();
+        const today = new Date(new Date().toDateString());
         const filteredConcerts = concerts
             .map(concert => ({ ...concert, date: new Date(concert.date) }))
-            .filter(concert => concert.date >= now);
+            .filter(concert => concert.date >= today);
         filteredConcerts.sort((a, b) => a.date - b.date);
         filteredConcerts.forEach((concert, i) => {
             const card = makeCard(concert);

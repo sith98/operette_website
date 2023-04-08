@@ -128,7 +128,7 @@ header h1 svg {
     height: 1.5em;
     width: 1.5em;
     margin-top: -0.35em;
-    /* filter: drop-shadow(0 0 0.5rem black); */
+    filter: drop-shadow(0 0 0.5rem black);
 }
 
 /* Small concerts */
