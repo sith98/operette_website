@@ -156,7 +156,6 @@ article.small-concert:focus {
     background-color: var(--dropdown-hover-background-color);
 }
 
-
 article.small-concert div:nth-child(1) {
     font-size: var(--font-size);
     color: var(--h6-color);
@@ -248,7 +247,8 @@ figcaption::before {
 }
 
 .lazyframe,
-iframe {
+iframe,
+video {
     width: 560px;
     max-width: 100%;
 }
