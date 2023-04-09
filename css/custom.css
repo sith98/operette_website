@@ -207,8 +207,9 @@ article.small-concert h6 {
 /* About us */
 
 .person {
-    margin-bottom: calc(var(--spacing) * 2);
+    margin-bottom: var(--typography-spacing-vertical);
     display: grid;
+    gap: var(--spacing);
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     grid-template-areas: "h4"
@@ -216,27 +217,10 @@ article.small-concert h6 {
         "p";
 }
 
-@media (min-width: 768px) {
-    .person {
-        grid-template-columns: 1fr 15rem;
-        grid-template-rows: auto;
-        align-items: start;
-        gap: 0;
-        grid-template-areas: "h4 img"
-            "p img"
-            ". img";
-    }
-}
-
-@media (max-width: 767px) {
-    .person h4 {
-        text-align: center;
-    }
-}
-
 .person h4 {
     grid-area: h4;
-    margin-bottom: var(--spacing);
+    margin: 0;
+    text-align: center;
 }
 
 .person p {
@@ -247,6 +231,22 @@ article.small-concert h6 {
     grid-area: img;
     border-radius: var(--border-radius);
     justify-self: center;
+}
+
+
+@media (min-width: 768px) {
+    .person {
+        grid-template-columns: 1fr 15rem;
+        grid-template-rows: auto;
+        align-items: start;
+        grid-template-areas: "h4 img"
+            "p img"
+            ". img";
+    }
+
+    .person h4 {
+        text-align: left;
+    }
 }
 
 /* Projects */
