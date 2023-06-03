@@ -144,6 +144,7 @@ header h1 svg {
     display: flex;
     gap: var(--block-spacing-horizontal);
     flex-direction: column;
+    justify-content: center;
     margin-bottom: var(--typography-spacing-vertical);
 }
 
@@ -163,6 +164,7 @@ header h1 svg {
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     margin: 0;
+    max-width: 920px;
 }
 
 article.small-concert:hover {
