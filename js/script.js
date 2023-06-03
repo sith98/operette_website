@@ -90,10 +90,10 @@ window.addEventListener("DOMContentLoaded", () => {
         let specialDate = false;
         console.log(day, today, day - today)
         if (day - today === 0) {
-            dateString = `Heute um ${timeString}`;
+            dateString = concert.withTime ? `Heute um ${timeString}` : "Heute";
             specialDate = true;
         } else if (day - today === 3600 * 24 * 1000) {
-            dateString = `Morgen um ${timeString}`;
+            dateString = concert.withTime ? `Morgen um ${timeString}` : "Morgen";
             specialDate = true;
         } else if (day - today <= 3600 * 24 * 1000 * 6) {
             dateString = "Kommenden " + concert.date.toLocaleDateString("de-DE", { weekday: "long" });
@@ -127,6 +127,11 @@ window.addEventListener("DOMContentLoaded", () => {
         const weekday = concert.date.toLocaleDateString("de-DE", { weekday: "long" });
         const date = concert.date.toLocaleDateString("de-DE", { year: "numeric", month: "long", day: "numeric" });
         const time = concert.date.toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" });
+
+        const timeString = concert.withTime ?
+            `<span>Am ${weekday},</span> <span>den ${date}</span> <span>um ${time} Uhr</span>` :
+            `<span>Am ${weekday},</span> <span>den ${date}</span>`;
+
         const card = document.createElement("article");
         card.classList.add("concert");
 
@@ -146,7 +151,7 @@ window.addEventListener("DOMContentLoaded", () => {
                     </div>
                     <div>
                         <strong>Wann?</strong>
-                        <span>Am ${weekday},</span> <span>den ${date}</span> <span>um ${time} Uhr</span>
+                        ${timeString}
                     </div>
                     ${concert.info === undefined ? "" : `<div><em>${concert.info}</em></div>`}
                 </div>
@@ -161,7 +166,7 @@ window.addEventListener("DOMContentLoaded", () => {
         concertsDiv.innerHTML = "";
         const today = new Date(new Date().toDateString());
         const filteredConcerts = concerts
-            .map(concert => ({ ...concert, date: new Date(concert.date) }))
+            .map(concert => ({ ...concert, date: new Date(concert.date), withTime: concert.date.includes("T") }))
             .filter(concert => concert.date >= today);
         filteredConcerts.sort((a, b) => a.date - b.date);
         filteredConcerts.forEach((concert, i) => {
