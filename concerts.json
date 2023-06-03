@@ -23,5 +23,12 @@
         "locationShort": "Frontenhausen",
         "location": "Postsaal Frontenhausen",
         "map": "https://goo.gl/maps/v7Mag6AZJKXyxxeF8"
+    },
+    {
+        "title": "Neues Operettenprogramm",
+        "locationShort": "Kürn",
+        "location": "Theater Kürn",
+        "date": "2023-12-30",
+        "map": "https://goo.gl/maps/7MQZosDQsTXBQLZV9"
     }
 ]
