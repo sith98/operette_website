@@ -18,17 +18,24 @@
         "info": "Eintritt frei, Spenden erbeten"
     },
     {
-        "title": "Neues Operettenprogramm ",
+        "title": "Operettenprogramm 2024",
+        "locationShort": "Kürn",
+        "location": "Theater Kürn",
+        "date": "2023-12-30",
+        "map": "https://goo.gl/maps/7MQZosDQsTXBQLZV9"
+    },
+    {
+        "title": "Operettenprogramm 2024",
         "date": "2024-01-07T17:00",
         "locationShort": "Frontenhausen",
         "location": "Postsaal Frontenhausen",
         "map": "https://goo.gl/maps/v7Mag6AZJKXyxxeF8"
     },
     {
-        "title": "Neues Operettenprogramm",
-        "locationShort": "Kürn",
-        "location": "Theater Kürn",
-        "date": "2023-12-30",
-        "map": "https://goo.gl/maps/7MQZosDQsTXBQLZV9"
+        "title": "Operettenprogramm 2024",
+        "date": "2024-01-14T16:00",
+        "locationShort": "Diesenbach",
+        "location": "Pfarrsaal Diesenbach",
+        "map": "https://goo.gl/maps/YdDCvEX44i16qBV7A"
     }
 ]

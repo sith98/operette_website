@@ -136,7 +136,7 @@ header h1 svg {
 .small-concerts-header {
     text-align: center;
     margin-bottom: var(--spacing);
-    color: var(--primary-light)
+    color: var(--primary-light);
 }
 
 
