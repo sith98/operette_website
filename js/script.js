@@ -166,7 +166,12 @@ window.addEventListener("DOMContentLoaded", () => {
         concertsDiv.innerHTML = "";
         const today = new Date(new Date().toDateString());
         const filteredConcerts = concerts
-            .map(concert => ({ ...concert, date: new Date(concert.date), withTime: concert.date.includes("T") }))
+            .map(concert => ({
+                ...concert,
+                locationShort: concert.locationShort ?? concert.location,
+                date: new Date(concert.date),
+                withTime: concert.date.includes("T")
+            }))
             .filter(concert => concert.date >= today);
         filteredConcerts.sort((a, b) => a.date - b.date);
         filteredConcerts.forEach((concert, i) => {
