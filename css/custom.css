@@ -182,7 +182,7 @@ article.small-concert div:nth-child(1) {
 }
 
 article.small-concert div:nth-child(2) {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     color: var(--h2-color);
     font-weight: bold;
 }
