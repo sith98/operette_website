@@ -34,12 +34,16 @@
     {
         "title": "Neues Operettenprogramm",
         "date": "2024-01-12",
-        "location": "Beratshausen"
+        "location": "Zehentstadel Beratshausen",
+        "locationShort": "Beratshausen",
+        "map": "https://goo.gl/maps/CSP8GvaZkfTVb8zK8"
     },
     {
         "title": "Neues Operettenprogramm",
-        "date": "2024-01-13",
-        "location": "Buch"
+        "date": "2024-01-13T19:30",
+        "locationShort": "Buch am Erlbach",
+        "location": "Bürgersaal, Buch am Erlbach",
+        "map": "https://goo.gl/maps/xJuVfJcy4bGPwv8x5"
     },
     {
         "title": "Neues Operettenprogramm",
