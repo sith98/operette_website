@@ -116,6 +116,8 @@ window.addEventListener("DOMContentLoaded", () => {
             const link = document.querySelector('a[href*="#concerts"]')
             link.setAttribute("aria-current", "page");
             history.pushState(null, null, link.getAttribute("href"));
+            // defocus the card
+            smallCard.blur();
         });
         return smallCard;
     };
