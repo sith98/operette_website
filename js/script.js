@@ -6,7 +6,9 @@ const linkIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
 
 window.addEventListener("DOMContentLoaded", () => {
     const nav = document.querySelector("nav");
-    const links = document.querySelectorAll("nav .links a");
+    const smallConcertsLinkContainer = document.querySelector(".small-concerts-link")
+    const smallConcertsLink = smallConcertsLinkContainer.querySelector("a");
+    const links = [...document.querySelectorAll("nav .links a"), smallConcertsLink];
     const smallConcertsDiv = document.querySelector(".small-concerts");
     const concertsDiv = document.querySelector(".concerts");
 
@@ -82,7 +84,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // Concerts
     //
 
-    const makeSmallCard = (concert, card) => {
+    const makeSmallCard = (concert, card, id) => {
         const today = new Date(new Date().toDateString());
         const day = new Date(concert.date.toDateString());
         const timeString = concert.date.toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" });
@@ -102,6 +104,7 @@ window.addEventListener("DOMContentLoaded", () => {
         const smallCard = document.createElement("article");
         smallCard.classList.add("small-concert");
         smallCard.setAttribute("tabindex", "0");
+        smallCard.id = id;
         smallCard.innerHTML = `
             <div>${concert.locationShort}</div>
             <div>${concert.title}</div>
@@ -117,7 +120,7 @@ window.addEventListener("DOMContentLoaded", () => {
         return smallCard;
     };
 
-    const makeCard = (concert) => {
+    const makeCard = (concert, id) => {
         const linkHtml = concert.link === undefined && concert.map === undefined ? "" : `
             <div class="right">
                 ${concert.link === undefined ? "" : `<a class="primary" role="button" href="${concert.link}" target="_blank">Weitere Infos ${linkIcon}</a>`}
@@ -134,6 +137,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
         const card = document.createElement("article");
         card.classList.add("concert");
+        card.id = id;
 
         const title = concert.subtitle === undefined ? `<h3 class="single">${concert.title}</h3>` : `
             <hgroup>
@@ -175,16 +179,22 @@ window.addEventListener("DOMContentLoaded", () => {
             .filter(concert => concert.date >= today);
         filteredConcerts.sort((a, b) => a.date - b.date);
         filteredConcerts.forEach((concert, i) => {
-            const card = makeCard(concert);
+            const id = `concert-${i}`;
+            // console.log("test")
+            const card = makeCard(concert, id);
             concertsDiv.appendChild(card);
-            if (i < 3) {
-                const smallCard = makeSmallCard(concert, card);
-                smallConcertsDiv.appendChild(smallCard);
-            }
+            // if (i < 3) {
+            const smallCard = makeSmallCard(concert, card, id);
+            smallConcertsDiv.appendChild(smallCard);
+            // }
         });
         if (filteredConcerts.length === 0) {
             smallConcertsDiv.innerHTML = concertsDiv.innerHTML = "<p><em>Aktuell stehen noch keine zukünftigen Konzerttermine fest.</em></p>";
         }
+        // if (filteredConcerts.length > 3) {
+        //     smallConcertsLinkContainer.classList.remove("hidden");
+        //     smallConcertsLink.href = "#concert-3"
+        // }
     });
 
     //
