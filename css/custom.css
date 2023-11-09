@@ -5,6 +5,9 @@
     --background-color: #202020;
     --card-background-color: #2c2b31;
     --dropdown-hover-background-color: #35333d;
+    /* --background-color: #201c24;
+    --card-background-color: #2e2536;
+    --dropdown-hover-background-color: #3b2e49; */
     --card-sectionning-background-color: var(--dropdown-hover-background-color);
     --primary: rgb(129, 118, 88);
     --primary-hover: rgb(155, 140, 104);
