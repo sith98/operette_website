@@ -20,12 +20,6 @@
     --modal-overlay-background-color: rgba(32, 32, 32, 0.7);
 }
 
-@font-face {
-    font-family: DancingScript;
-    src: url(../fonts/DancingScript-Regular.ttf);
-    font-display: swap;
-}
-
 body>main {
     padding-top: 3.5rem;
 }
@@ -103,7 +97,7 @@ header img {
 }
 
 header h1 {
-    font-family: DancingScript, serif;
+    /* font-family: DancingScript, serif; */
     font-size: 4rem;
     color: hsl(205deg, 20%, 94%);
     margin: 0;
@@ -132,9 +126,11 @@ header h1 {
 }
 
 header h1 svg {
+    /* height: 1.5em; */
+    width: 8.5em;
     height: 1.5em;
-    width: 1.5em;
-    margin-top: -0.35em;
+    /* height: auto; */
+    /* margin-top: -0.35em; */
     filter: drop-shadow(0 0 0.5rem black);
 }
 
