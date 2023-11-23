@@ -22,34 +22,43 @@
         "locationShort": "Kürn",
         "location": "Theater Kürn",
         "date": "2023-12-30T20:00",
-        "map": "https://goo.gl/maps/7MQZosDQsTXBQLZV9"
+        "map": "https://goo.gl/maps/7MQZosDQsTXBQLZV9",
+        "info": "Eintritt frei, Spenden erbeten"
     },
     {
         "title": "Ein Lied geht um die Welt",
         "date": "2024-01-07T17:00",
         "locationShort": "Frontenhausen",
         "location": "Postsaal Frontenhausen",
-        "map": "https://goo.gl/maps/v7Mag6AZJKXyxxeF8"
+        "map": "https://goo.gl/maps/v7Mag6AZJKXyxxeF8",
+        "info": "Tickets im Pfarrbüro erhältlich",
+        "linkLabel": "Tickets",
+        "link": "https://www.pfarrei-frontenhausen.de/unser-pfarramt/"
     },
     {
         "title": "Ein Lied geht um die Welt",
         "date": "2024-01-12T19:00",
         "location": "Zehentstadel Beratzhausen",
         "locationShort": "Beratzhausen",
-        "map": "https://goo.gl/maps/CSP8GvaZkfTVb8zK8"
+        "map": "https://goo.gl/maps/CSP8GvaZkfTVb8zK8",
+        "info": "Tickets sind via okticket.de erhältlich",
+        "linkLabel": "Tickets",
+        "link": "https://okticket.de/tickets-neujahrskonzert-ein-lied-geht-um-die-welt-beratzhausen-zehentstadel-2024-01-12-e44799?event_id=44799&cookiecheck=true"
     },
     {
         "title": "Ein Lied geht um die Welt",
         "date": "2024-01-13T19:30",
         "locationShort": "Buch am Erlbach",
         "location": "Bürgersaal, Buch am Erlbach",
-        "map": "https://goo.gl/maps/xJuVfJcy4bGPwv8x5"
+        "map": "https://goo.gl/maps/xJuVfJcy4bGPwv8x5",
+        "info": "Eintritt frei, Spenden erbeten"
     },
     {
         "title": "Ein Lied geht um die Welt",
         "date": "2024-01-14T16:00",
         "locationShort": "Diesenbach",
         "location": "Pfarrsaal Diesenbach",
-        "map": "https://goo.gl/maps/YdDCvEX44i16qBV7A"
+        "map": "https://goo.gl/maps/YdDCvEX44i16qBV7A",
+        "info": "Eintritt frei, Spenden erbeten"
     }
 ]
