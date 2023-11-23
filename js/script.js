@@ -125,7 +125,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const makeCard = (concert, id) => {
         const linkHtml = concert.link === undefined && concert.map === undefined ? "" : `
             <div class="right">
-                ${concert.link === undefined ? "" : `<a class="primary" role="button" href="${concert.link}" target="_blank">Weitere Infos ${linkIcon}</a>`}
+                ${concert.link === undefined ? "" : `<a class="primary" role="button" href="${concert.link}" target="_blank">${concert.linkLabel} ${linkIcon}</a>`}
                 ${concert.map === undefined ? "" : `<a class="secondary" role="button" href="${concert.map}" target="_blank">Auf Karte anzeigen ${linkIcon}</a>`}
             </div>
         `
@@ -176,7 +176,8 @@ window.addEventListener("DOMContentLoaded", () => {
                 ...concert,
                 locationShort: concert.locationShort ?? concert.location,
                 date: new Date(concert.date),
-                withTime: concert.date.includes("T")
+                withTime: concert.date.includes("T"),
+                linkLabel: concert.linkLabel ?? "Weitere Infos",
             }))
             .filter(concert => concert.date >= today);
         filteredConcerts.sort((a, b) => a.date - b.date);
