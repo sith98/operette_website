@@ -19,6 +19,14 @@
     },
     {
         "title": "Ein Lied geht um die Welt",
+        "locationShort": "Roding",
+        "location": "Pfarrheim Roding",
+        "date": "2023-12-29T19:30",
+        "map": "https://maps.app.goo.gl/Ctn1ZBn2djDPwdBT8",
+        "info": "Eintritt frei, Spenden erbeten"
+    },
+    {
+        "title": "Ein Lied geht um die Welt",
         "locationShort": "Kürn",
         "location": "Theater Kürn",
         "date": "2023-12-30T20:00",
