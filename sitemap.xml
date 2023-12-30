@@ -81,6 +81,13 @@
         https://ensemble-inszene.de/videos/trailer.mp4
       </video:content_loc>
     </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://ensemble-inszene.de/img/thumbnail2.jpg</video:thumbnail_loc>
+      <video:title>Ein Lied geht um die Welt ‒ Trailer</video:title>
+      <video:content_loc>
+        https://ensemble-inszene.de/videos/trailer2.mp4
+      </video:content_loc>
+    </video:video>
   </url>
   <url>
     <loc>https://ensemble-inszene.de/privacy.html</loc>
