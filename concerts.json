@@ -68,5 +68,21 @@
         "location": "Pfarrsaal Diesenbach",
         "map": "https://goo.gl/maps/YdDCvEX44i16qBV7A",
         "info": "Eintritt frei, Spenden erbeten"
+    },
+    {
+        "title": "Ein Lied geht um die Welt",
+        "date": "2024-05-10T19:30",
+        "locationShort": "Regensburg",
+        "location": "Haus der Musik am Bismarckplatz in Regensburg",
+        "map": "https://maps.app.goo.gl/V1P7zUxr9Bj59hWUA",
+        "info": "Eintritt frei, Spenden erbeten"
+    },
+    {
+        "title": "Ein Lied geht um die Welt",
+        "date": "2024-10-03",
+        "locationShort": "Neutraubling",
+        "location": "Theater im Kulturhaus Neutraubling",
+        "map": "https://maps.app.goo.gl/w6mPDmttWRXwvcuq7",
+        "info": "Eintritt frei, Spenden erbeten"
     }
 ]
