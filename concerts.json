@@ -88,10 +88,20 @@
     },
     {
         "title": "Ein Lied geht um die Welt",
-        "date": "2024-10-03",
+        "date": "2024-10-03T15:00",
         "locationShort": "Neutraubling",
-        "location": "Theater im Kulturhaus Neutraubling",
+        "location": "Theatersaal Kulturhaus, Neutraubling",
         "map": "https://maps.app.goo.gl/w6mPDmttWRXwvcuq7",
-        "info": "Eintritt frei, Spenden erbeten"
+        "link": "https://okticket.de/tickets-konzert-zum-weltseniorentag-neutraubling-theatersaal-im-kulturhaus-2024-10-03-e48303?event_id=48303&cookiecheck=true",
+        "linkLabel": "Tickets",
+        "info": "Eintritt 10€ (Vorverkauf und Abendkasse)"
+    },
+    {
+        "title": "Ein Lied geht um die Welt",
+        "date": "2024-10-04T19:00",
+        "location": "Pfarrsaal Rheinhausen, Regensburg",
+        "locationShort": "Regensburg",
+        "info": "Eintritt frei, Spenden erbeten",
+        "map": "https://maps.app.goo.gl/X9zBYt986p2sjf5b6"
     }
 ]
