@@ -192,6 +192,7 @@ window.addEventListener("DOMContentLoaded", () => {
             // }
         });
         if (filteredConcerts.length === 0) {
+            smallConcertsDiv.classList.add("empty")
             smallConcertsDiv.innerHTML = concertsDiv.innerHTML = "<p><em>Aktuell stehen noch keine zukünftigen Konzerttermine fest.</em></p>";
         }
         // if (filteredConcerts.length > 3) {
@@ -228,13 +229,35 @@ window.addEventListener("DOMContentLoaded", () => {
 
     gallery.then(text => {
         const gallery = document.querySelector(".gallery");
-        const images = text.split("\n").filter(url => url !== "").map(url =>
-            url.split(",").map(s => s.trim()).filter(s => s !== "")
-        )
-        images.forEach(([url, title]) => {
-            const a = makeGalleryLink(url, title);
-            gallery.appendChild(a);
-        });
+        const lines = text.split("\n").map(line => line.trim()).filter(line => line !== "");
+
+        const groups = [];
+
+        for (const line of lines) {
+            if (line.charAt(line.length - 1) === ":") {
+                const newGroup = {
+                    name: line.substring(0, line.length - 1),
+                    images: []
+                }
+                groups.push(newGroup);
+            } else {
+                const image = line.split(",").map(s => s.trim()).filter(s => s !== "")
+                groups[groups.length - 1].images.push(image)
+            }
+        };
+
+        for (const { name, images } of groups) {
+            const group = document.createElement("div");
+            group.classList.add("group")
+            const groupTitle = document.createElement("h4");
+            groupTitle.innerText = name;
+            images.forEach(([url, title]) => {
+                const a = makeGalleryLink(url, title);
+                group.appendChild(a);
+            });
+            gallery.appendChild(groupTitle);
+            gallery.appendChild(group);
+        }
 
         new SimpleLightbox(".gallery a", { spinner: true, history: false });
     });
