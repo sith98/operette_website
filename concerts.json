@@ -103,5 +103,23 @@
         "locationShort": "Regensburg",
         "info": "Eintritt frei, Spenden erbeten",
         "map": "https://maps.app.goo.gl/X9zBYt986p2sjf5b6"
+    },
+    {
+        "title": "Der Nächste, bitte...",
+        "date": "2024-12-27T20:00",
+        "location": "Theater Kürn",
+        "locationShort": "Kürn",
+        "link": "https://okticket.de/tickets-konzert-zum-weltseniorentag-neutraubling-theatersaal-im-kulturhaus-2024-10-03-e48303?event_id=48303&cookiecheck=true",
+        "linkLabel": "Tickets",
+        "info": "Eintritt frei, Spenden erbeten",
+        "map": "https://goo.gl/maps/7MQZosDQsTXBQLZV9"
+    },
+    {
+        "title": "Ein Lied geht um die Welt",
+        "date": "2024-10-04T19:00",
+        "location": "Pfarrsaal Reinhausen, Regensburg",
+        "locationShort": "Regensburg",
+        "info": "Eintritt frei, Spenden erbeten",
+        "map": "https://maps.app.goo.gl/X9zBYt986p2sjf5b6"
     }
 ]
