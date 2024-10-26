@@ -163,6 +163,10 @@ header h1 svg {
     .small-concerts {
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }
+
+    .small-concerts.empty {
+        grid-template-columns: 1fr;
+    }
 }
 
 .small-concerts article {
@@ -334,13 +338,17 @@ article.concert svg {
 
 /* Gallery */
 
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
+
+.gallery h4 {
+    color: var(--primary-light);
+    margin-top: calc(var(--typography-spacing-vertical) * 0.5);
+    margin-bottom: calc(var(--typography-spacing-vertical) * 0.5);
 }
 
-.gallery a {
-    margin: calc(var(--spacing) * 0.3);
+.gallery .group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(var(--spacing) * 0.3);
 }
 
 .gallery img {
