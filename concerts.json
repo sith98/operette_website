@@ -103,5 +103,45 @@
         "locationShort": "Regensburg",
         "info": "Eintritt frei, Spenden erbeten",
         "map": "https://maps.app.goo.gl/X9zBYt986p2sjf5b6"
+    },
+    {
+        "title": "PREMIERE: Der Nächste, bitte...",
+        "date": "2024-12-27T19:30",
+        "locationShort": "Roding",
+        "location": "Pfarrsaal Roding",
+        "map": "https://maps.app.goo.gl/ypwTrjMrDCguUPnB8",
+        "info": "Eintritt frei, Spenden erbeten"
+    },
+    {
+        "title": "Der Nächste, bitte...",
+        "date": "2024-12-28T20:00",
+        "locationShort": "Kürn",
+        "location": "Theater Kürn",
+        "map": "https://goo.gl/maps/7MQZosDQsTXBQLZV9",
+        "info": "Eintritt frei, Spenden erbeten"
+    },
+    {
+        "title": "Der Nächste, bitte...",
+        "date": "2024-12-29T18:00",
+        "locationShort": "Niederaichbach",
+        "location": "Aichbachhalle, Niederaichbach",
+        "map": "https://maps.app.goo.gl/yyrftMpZwiosNqMr6",
+        "info": "Eintritt 15€ (Vorverkauf im Pfarrbüro und Restkarten an der Abendkasse)"
+    },
+    {
+        "title": "Der Nächste, bitte...",
+        "date": "2025-01-03T19:00",
+        "locationShort": "Diesenbach",
+        "location": "Pfarrsaal Diesenbach",
+        "map": "https://goo.gl/maps/YdDCvEX44i16qBV7A",
+        "info": "Eintritt frei, Spenden erbeten"
+    },
+    {
+        "title": "Der Nächste, bitte...",
+        "date": "2025-01-04T19:30",
+        "locationShort": "Buch am Erlbach",
+        "location": "Bürgersaal Buch am Erlbach",
+        "map": "https://maps.app.goo.gl/7tcTp7Kv3R9ezDso8",
+        "info": "Eintritt frei, Spenden erbeten"
     }
 ]
