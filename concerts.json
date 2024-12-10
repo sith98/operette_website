@@ -143,5 +143,15 @@
         "location": "Bürgersaal Buch am Erlbach",
         "map": "https://maps.app.goo.gl/7tcTp7Kv3R9ezDso8",
         "info": "Eintritt frei, Spenden erbeten"
+    },
+    {
+        "title": "Neujahrskonzert Konzertchor Landshut",
+        "date": "2025-01-26T17:30",
+        "locationShort": "Landshut",
+        "location": "Rathausprunksaal Landshut",
+        "map": "https://maps.app.goo.gl/DywmACwfH32RJuws9",
+        "link": "https://okticket.de/tickets-neujahrskonzert-landshut-rathaus-2025-01-26-e49101?event_id=49101&cookiecheck=true",
+        "linkLabel": "Tickets",
+        "info": "Tickets über Ok-Ticket/ Veranstalter: Konzertchor Landshut"
     }
 ]
