@@ -152,20 +152,21 @@
         "map": "https://maps.app.goo.gl/DywmACwfH32RJuws9",
         "link": "https://okticket.de/tickets-neujahrskonzert-landshut-rathaus-2025-01-26-e49101?event_id=49101&cookiecheck=true",
         "linkLabel": "Tickets",
-        "info": "Tickets über Ok-Ticket/ Veranstalter: Konzertchor Landshut"
+        "info": "Tickets über Ok-Ticket<br/>Veranstalter: Konzertchor Landshut"
     },
     {
         "title": "Onkel und Tante, ja das sind Verwandte",
+        "subtitle": "Highlights der Operette",
         "date": "2025-05-24T20:00",
         "locationShort": "Wiesent",
         "location": "Sommerkeller Wiesent",
         "map": "https://maps.app.goo.gl/deHEtWgAtyVZobzt5",
         "link": "https://donau-wald-kultur.de/eventleser/ensemble-inszene-onkel-und-tante-ja-das-sind-verwandte.html",
-        "linkLabel": "VVK Infos",
         "info": "Vorverkauf: Rathaus Wiesent, Bäckerei Fuidl, Bäckerei Weber und online über die Gemeinde Wiesent<br/>Veranstalter: Gemeinde Wiesent"
     },
     {
         "title": "Der Nächste, bitte...",
+        "subtitle": "Operette – Schlager – Chanson",
         "date": "2025-05-23T19:30",
         "locationShort": "Kallmünz",
         "location": "Pfarrsaal Kallmünz",
