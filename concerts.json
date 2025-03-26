@@ -185,6 +185,15 @@
     {
         "title": "Der Nächste, bitte...",
         "subtitle": "Operette – Schlager – Chanson",
+        "date": "2025-10-04T16:00",
+        "locationShort": "Regensburg",
+        "location": "Pfarrheim St.Konrad",
+        "map": "https://www.google.com/maps/place/St.+Konrad+Stadtpfarramt/@49.0406599,12.1212288,16z/data=!3m1!5s0x479fc1ef3f8e515b:0x805d3521158f9365!4m6!3m5!1s0x479fc1ef00e82e3b:0xaf862f85d7e070f6!8m2!3d49.0406599!4d12.1263786!16s%2Fg%2F1pz2tqpqp?entry=ttu&g_ep=EgoyMDI1MDMyMy4wIKXMDSoASAFQAw%3D%3D",
+        "info": "Eintritt frei, Spenden erbeten"
+    },
+    {
+        "title": "Der Nächste, bitte...",
+        "subtitle": "Operette – Schlager – Chanson",
         "date": "2025-10-03T15:00",
         "locationShort": "Neutraubling",
         "location": "Theater im Kulturhaus, Neutraubling",
@@ -204,8 +213,8 @@
         "title": "Der Nächste, bitte...",
         "subtitle": "Operette – Schlager – Chanson",
         "date": "2025-05-25T17:00",
-        "locationShort": "Beratshausen",
-        "location": "Zehentstadel, Beratshausen",
+        "locationShort": "Beratzhausen",
+        "location": "Zehentstadel, Beratzhausen",
         "map": "https://goo.gl/maps/CSP8GvaZkfTVb8zK8",
         "info": "weitere Infos folgen!"
     },
