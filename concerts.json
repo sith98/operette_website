@@ -220,6 +220,15 @@
         "linkLabel": "Tickets",
         "info": "Tickets über Ok-Ticket und an der Abendkasse"
     },
+     {
+        "title": "Lippen schweigen",
+        "subtitle": "Operettenkonzert",
+        "date": "2025-08-29T19:00",
+        "locationShort": "Buch am Erlbach",
+        "location": "Generationenpark, Buch am Erlbach",
+        "map": "https://www.google.de/maps/place/Generationenpark/@48.4440744,12.0339589,15.54z/data=!4m6!3m5!1s0x479e22faf80884bb:0x6c2d7bbd62e80186!8m2!3d48.4420751!4d12.0386506!16s%2Fg%2F11b7hg9_zr?entry=ttu&g_ep=EgoyMDI1MDYwNC4wIKXMDSoASAFQAw%3D%3D",
+        "info": "Eintritt frei, Spenden erbeten! Bei Schlechtwetter findet das Konzert im Bürgersaal statt."
+    },
     {
         "title": "Onkel und Tante, ja dass sind Verwandte",
         "subtitle": "Die Highlights der Operette",
