@@ -211,6 +211,15 @@
         "linkLabel": "Tickets",
         "info": "Tickets über Ok-Ticket und an der Abendkasse"
     },
+    {
+        "title": "Der Nächste, bitte...",
+        "subtitle": "Operette – Schlager – Chanson",
+        "date": "2025-11-03T19:30",
+        "locationShort": "Regensburg",
+        "location": "Degginger, Regensburg",
+        "map": "https://www.google.com/maps/place/Degginger/@49.0191227,12.0930505,17z/data=!3m2!4b1!5s0x479fc1a605511e91:0x418dba588e701adc!4m6!3m5!1s0x479fc1a605ab4479:0x1a7ae2211ecabfe1!8m2!3d49.0191192!4d12.0956201!16s%2Fg%2F11cn6nn8l7?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D",
+        "info": "Eintritt frei, Spenden erbeten! Die Veranstaltung wird unterstützt Kreativbehörde und Kulturamt der Stadt Regensburg."
+    },
      {
         "title": "Lippen schweigen",
         "subtitle": "Operettenkonzert",
