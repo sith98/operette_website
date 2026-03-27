@@ -280,7 +280,9 @@
         "locationShort": "Neutraubling",
         "location": "Theatersaal Kulturhaus, Neutraubling",
         "map": "https://maps.app.goo.gl/w6mPDmttWRXwvcuq7",
-        "info": "(Vorverkauf und Abendkasse) weitere Infos folgen bald!"
+         "info": "Veranstalter: Stadt Neutraubling",
+        "linkLabel": "weitere Informationen",
+        "link": "https://www.stadt-neutraubling.de/kultur-freizeit-veranstaltungen/veranstaltungen-in-neutraubling/#/de/landkreis-regensburg-neutral/default/detail/Event/e_101232376/operettennachmittag-mit-inszene?From=2026-04-18T15%3A00%3A00%2B02"
     },
     {
         "title": "Alle maskiert!",
