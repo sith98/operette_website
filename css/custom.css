@@ -232,6 +232,10 @@ article.small-concert h6 {
 
 /* About us */
 
+h3.person-group {
+    text-align: center;
+}
+
 .person {
     margin-bottom: var(--typography-spacing-vertical);
     display: grid;
